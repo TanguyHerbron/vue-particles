@@ -13,6 +13,9 @@
     :lineOpacity="lineOpacity"
     :linesDistance="linesDistance"
     :moveSpeed="moveSpeed"
+    :moveRandom="moveRandom"
+    :moveDirection="moveDirection"
+    :moveStraight="moveStraight"
     :hoverEffect="hoverEffect"
     :hoverMode="hoverMode"
     :clickEffect="clickEffect"
@@ -72,6 +75,18 @@
       moveSpeed: {
         type: Number,
         default: 3
+      },
+      moveRandom: {
+        type: Boolean,
+        default: false
+      },
+      moveDirection: {
+        type: String,
+        default: "none"
+      },
+      moveStraight: {
+        type: Boolean,
+        default: false
       },
       hoverEffect: {
         type: Boolean,
@@ -184,9 +199,9 @@
             "move": {
               "enable": true,
               "speed": moveSpeed,
-              "direction": "none",
-              "random": false,
-              "straight": false,
+              "direction": moveDirection,
+              "random": moveRandom,
+              "straight": moveStraight,
               "out_mode": "out",
               "bounce": false,
               "attract": {
